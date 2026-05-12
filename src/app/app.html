@@ -41,6 +41,26 @@
 
     </div>
 
+    <div class="flex gap-3">
+
+  <!-- Bouton Français -->
+  <button
+    (click)="changeLang('fr')"
+    class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-cyan-500 hover:text-black transition"
+  >
+    FR
+  </button>
+
+  <!-- Bouton Anglais -->
+  <button
+    (click)="changeLang('en')"
+    class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-cyan-500 hover:text-black transition"
+  >
+    EN
+  </button>
+
+</div>
+
   </div>
 
 </nav>
@@ -53,7 +73,7 @@
       <div class="max-w-2xl">
 
         <p class="text-cyan-400 text-lg mb-2">
-          Hello 👋 I'm
+          {{ t.hello }}
         </p>
 
         <h1 class="text-5xl md:text-7xl font-bold mb-6">
@@ -61,12 +81,11 @@
         </h1>
 
         <h2 class="text-2xl md:text-3xl text-slate-300 mb-6">
-          PHP/Symfony & Python/Django Developer
+          {{ t.title }}
         </h2>
 
         <p class="text-slate-400 text-lg leading-relaxed mb-8">
-          Passionate backend developer focused on modern web applications,
-          REST APIs, Docker and scalable architectures.
+          {{ t.description }}
         </p>
 
         <!-- Boutons -->
@@ -84,7 +103,7 @@
             href="mailto:dpieton.dev@gmail.com"
             class="border border-cyan-500 hover:bg-cyan-500 hover:text-black px-6 py-3 rounded-xl font-semibold transition"
           >
-            Contact Me
+            {{ t.contact }}
           </a>
 
         </div>
@@ -107,6 +126,108 @@
   </section>
 
   <!-- ========================= -->
+<!-- ABOUT SECTION -->
+<!-- ========================= -->
+<section class="container mx-auto px-6 py-20">
+
+  <!-- Titre -->
+  <h2 class="text-4xl font-bold text-center mb-16">
+
+    {{ t.about }}
+
+  </h2>
+
+  <!-- Layout -->
+  <div class="grid md:grid-cols-2 gap-12 items-center">
+
+    <!-- Texte -->
+    <div>
+
+      <p class="text-slate-300 text-lg leading-relaxed mb-6">
+
+        I'm a passionate web developer specialized in backend technologies
+        such as PHP, Symfony, Python and Django.
+
+      </p>
+
+      <p class="text-slate-400 text-lg leading-relaxed mb-6">
+
+        I enjoy building modern web applications, REST APIs,
+        scalable architectures and containerized environments using Docker.
+
+      </p>
+
+      <p class="text-slate-400 text-lg leading-relaxed">
+
+        Currently focused on remote opportunities and continuous learning
+        in fullstack and cloud technologies.
+
+      </p>
+
+    </div>
+
+    <!-- Cards infos -->
+    <div class="grid grid-cols-2 gap-6">
+
+      <!-- Experience -->
+      <div class="bg-slate-900 p-8 rounded-2xl text-center hover:scale-105 hover:-translate-y-2 transition duration-300">
+
+        <h3 class="text-4xl font-bold text-cyan-400 mb-3">
+          3+
+        </h3>
+
+        <p class="text-slate-400">
+          Years Learning
+        </p>
+
+      </div>
+
+      <!-- Technologies -->
+      <div class="bg-slate-900 p-8 rounded-2xl text-center hover:scale-105 hover:-translate-y-2 transition duration-300">
+
+        <h3 class="text-4xl font-bold text-cyan-400 mb-3">
+          10+
+        </h3>
+
+        <p class="text-slate-400">
+          Technologies
+        </p>
+
+      </div>
+
+      <!-- Projects -->
+      <div class="bg-slate-900 p-8 rounded-2xl text-center hover:scale-105 hover:-translate-y-2 transition duration-300">
+
+        <h3 class="text-4xl font-bold text-cyan-400 mb-3">
+          5+
+        </h3>
+
+        <p class="text-slate-400">
+          Personal Projects
+        </p>
+
+      </div>
+
+      <!-- Remote -->
+      <div class="bg-slate-900 p-8 rounded-2xl text-center hover:scale-105 hover:-translate-y-2 transition duration-300">
+
+        <h3 class="text-4xl font-bold text-cyan-400 mb-3">
+          100%
+        </h3>
+
+        <p class="text-slate-400">
+          Remote Ready
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+  <!-- ========================= -->
 <!-- SECTION TECH STACK -->
 <!-- ========================= -->
 <section id="tech" class="container mx-auto px-6 py-20">
@@ -114,7 +235,7 @@
   <!-- Titre section -->
   <h2 class="text-4xl font-bold text-center mb-16">
 
-    Tech Stack
+    {{ t.stack }}
 
   </h2>
 
@@ -243,23 +364,35 @@
   <!-- Titre -->
   <h2 class="text-4xl font-bold text-center mb-16">
 
-    Featured Projects
+    {{ t.projects }}
 
   </h2>
+  <!-- ========================= -->
+<!-- PROJECTS GRID -->
+<!-- ========================= -->
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-  <!-- Grid projets -->
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+  <!--
+    Angular 21 @for
+    Génère automatiquement les projets
+  -->
+  @for (project of projects; track project.title) {
 
-    <!-- ========================= -->
-    <!-- PROJECT 1 -->
-    <!-- ========================= -->
-    <div class="bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:scale-105 hover:-translate-y-2 transition duration-300">
+    <!-- Card projet -->
+    <div
+      class="bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:scale-105 hover:-translate-y-2 transition duration-300"
+    >
 
-      <!-- Image projet -->
-      <div class="h-48 bg-cyan-500 flex items-center justify-center">
+      <!-- Header couleur dynamique -->
+      <div
+        class="h-48 flex items-center justify-center"
+        [class]="project.color"
+      >
 
-        <span class="text-2xl font-bold text-black">
-          Symfony API
+        <span class="text-2xl font-bold text-white">
+
+          {{ project.title }}
+
         </span>
 
       </div>
@@ -267,162 +400,50 @@
       <!-- Contenu -->
       <div class="p-6">
 
-        <!-- Titre -->
-        <h3 class="text-2xl font-semibold mb-4">
-
-          Task Manager API
-
-        </h3>
-
         <!-- Description -->
         <p class="text-slate-400 mb-6">
 
-          REST API built with Symfony and Docker for task management.
+          {{ project.description }}
 
         </p>
 
         <!-- Technologies -->
         <div class="flex flex-wrap gap-2 mb-6">
 
-          <span class="bg-cyan-500 text-black px-3 py-1 rounded-full text-sm">
-            Symfony
-          </span>
+          <!-- Technologies dynamiques -->
+          @for (tech of project.technologies; track tech) {
 
-          <span class="bg-cyan-500 text-black px-3 py-1 rounded-full text-sm">
-            Docker
-          </span>
+            <span
+              class="bg-cyan-500 text-black px-3 py-1 rounded-full text-sm"
+            >
 
-          <span class="bg-cyan-500 text-black px-3 py-1 rounded-full text-sm">
-            PostgreSQL
-          </span>
+              {{ tech }}
+
+            </span>
+
+          }
 
         </div>
 
         <!-- Bouton -->
-        <a
-          href="#"
-          class="inline-block bg-cyan-500 hover:bg-cyan-400 text-black px-5 py-2 rounded-xl font-semibold transition"
+        <button
+          class="bg-cyan-500 hover:bg-cyan-400 text-black px-5 py-2 rounded-xl font-semibold transition"
         >
+
           View Project
-        </a>
+
+        </button>
 
       </div>
 
     </div>
 
-    <!-- ========================= -->
-    <!-- PROJECT 2 -->
-    <!-- ========================= -->
-    <div class="bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:scale-105 hover:-translate-y-2 transition duration-300">
+  }
 
-      <!-- Header -->
-      <div class="h-48 bg-purple-500 flex items-center justify-center">
+</div>
+  
 
-        <span class="text-2xl font-bold text-white">
-          Django App
-        </span>
-
-      </div>
-
-      <!-- Contenu -->
-      <div class="p-6">
-
-        <h3 class="text-2xl font-semibold mb-4">
-
-          CRM Dashboard
-
-        </h3>
-
-        <p class="text-slate-400 mb-6">
-
-          Customer management dashboard built with Django and Angular.
-
-        </p>
-
-        <!-- Tech -->
-        <div class="flex flex-wrap gap-2 mb-6">
-
-          <span class="bg-purple-500 text-white px-3 py-1 rounded-full text-sm">
-            Django
-          </span>
-
-          <span class="bg-purple-500 text-white px-3 py-1 rounded-full text-sm">
-            Angular
-          </span>
-
-          <span class="bg-purple-500 text-white px-3 py-1 rounded-full text-sm">
-            MySQL
-          </span>
-
-        </div>
-
-        <!-- Bouton -->
-        <a
-          href="#"
-          class="inline-block bg-purple-500 hover:bg-purple-400 text-white px-5 py-2 rounded-xl font-semibold transition"
-        >
-          View Project
-        </a>
-
-      </div>
-
-    </div>
-
-    <!-- ========================= -->
-    <!-- PROJECT 3 -->
-    <!-- ========================= -->
-    <div class="bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:scale-105 hover:-translate-y-2 transition duration-300">
-
-      <!-- Header -->
-      <div class="h-48 bg-green-500 flex items-center justify-center">
-
-        <span class="text-2xl font-bold text-black">
-          Portfolio
-        </span>
-
-      </div>
-
-      <!-- Contenu -->
-      <div class="p-6">
-
-        <h3 class="text-2xl font-semibold mb-4">
-
-          Developer Portfolio
-
-        </h3>
-
-        <p class="text-slate-400 mb-6">
-
-          Personal portfolio built with Angular and TailwindCSS.
-
-        </p>
-
-        <!-- Tech -->
-        <div class="flex flex-wrap gap-2 mb-6">
-
-          <span class="bg-green-500 text-black px-3 py-1 rounded-full text-sm">
-            Angular
-          </span>
-
-          <span class="bg-green-500 text-black px-3 py-1 rounded-full text-sm">
-            TailwindCSS
-          </span>
-
-        </div>
-
-        <!-- Bouton -->
-        <a
-          href="#"
-          class="inline-block bg-green-500 hover:bg-green-400 text-black px-5 py-2 rounded-xl font-semibold transition"
-        >
-          View Project
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
+    
 
 </section>
 
