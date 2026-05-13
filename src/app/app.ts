@@ -3,50 +3,18 @@ import { RouterOutlet } from '@angular/router';
 import { Navbar } from './components/navbar/navbar';
 import { Hero } from './components/hero/hero';
 import { About } from './components/about/about';
+import { TechStack } from './components/tech-stack/tech-stack';
+import { Projects } from './components/projects/projects';
+import { Footer } from './components/footer/footer';
 
 @Component({
   selector: 'app-root',
-  imports: [Navbar, Hero, About],
+  imports: [Navbar, Hero, About, TechStack, Projects, Footer],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  // Array Project
-  projects: Project[] = [
-    {
-      title: 'Task Manager API',
-
-      description:
-        'REST API built with Symfony and Docker for task management.',
-
-      technologies: ['Symfony', 'Docker', 'PostgreSQL'],
-
-      color: 'bg-cyan-500'
-    },
-
-    {
-      title: 'CRM Dashboard',
-
-      description:
-        'Customer management dashboard built with Django and Angular.',
-
-      technologies: ['Django', 'Angular', 'MySQL'],
-
-      color: 'bg-purple-500'
-    },
-
-    {
-      title: 'Developer Portfolio',
-
-      description:
-        'Personal portfolio built with Angular and TailwindCSS.',
-
-      technologies: ['Angular', 'TailwindCSS'],
-
-      color: 'bg-green-500'
-    }
-
-  ];
+  
   // Langue active
   currentLang = 'en';
 
@@ -83,22 +51,5 @@ export class App {
   changeLang(lang: string) {
     this.currentLang = lang;
   }
-
-}
-
-// Interface représentant un projet
-interface Project {
-
-  // Nom du projet
-  title: string;
-
-  // Description du projet
-  description: string;
-
-  // Technologies utilisées
-  technologies: string[];
-
-  // Couleur du header
-  color: string;
 
 }
