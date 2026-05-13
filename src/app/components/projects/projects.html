@@ -3,7 +3,7 @@
   <!-- Titre -->
   <h2 class="text-4xl font-bold text-center mb-16">
 
-    Featured Projects
+    {{ langService.t.projects }}
 
   </h2>
   <!-- ========================= -->
@@ -42,7 +42,7 @@
         <!-- Description -->
         <p class="text-slate-400 mb-6">
 
-          {{ project.description }}
+          {{ langService.currentLang() === 'fr' ? project.descriptionFr : project.descriptionEn }}
 
         </p>
 
@@ -69,7 +69,7 @@
           class="bg-cyan-500 hover:bg-cyan-400 text-black px-5 py-2 rounded-xl font-semibold transition"
         >
 
-          View Project
+          {{ langService.t.viewProject }}
 
         </button>
 

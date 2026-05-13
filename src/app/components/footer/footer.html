@@ -17,7 +17,7 @@
         </h3>
 
         <p class="text-slate-400">
-          PHP/Symfony & Python/Django Developer
+          {{ langService.t.title }}
         </p>
 
       </div>
@@ -39,7 +39,7 @@
           href="mailto:dpieton.dev@gmail.com"
           class="text-slate-400 hover:text-cyan-400 transition"
         >
-          Email
+          {{ langService.t.email }}
         </a>
 
         <!-- LinkedIn -->
@@ -57,7 +57,7 @@
     <!-- Ligne copyright -->
     <div class="mt-10 text-center text-slate-500 text-sm">
 
-      © 2026 Dominique Pieton — All rights reserved.
+      © {{ currentYear }} Dominique Pieton — {{ langService.t.rights }}.
 
     </div>
 

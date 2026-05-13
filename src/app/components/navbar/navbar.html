@@ -19,23 +19,42 @@
 
       <!-- Liens navigation -->
       <a href="#" class="hover:text-cyan-400 transition">
-        Home
+        {{ langService.t.home }}
       </a>
 
       <a href="#tech" class="hover:text-cyan-400 transition">
-        Tech Stack
+        {{ langService.t.stack }}
       </a>
 
       <a href="#projects" class="hover:text-cyan-400 transition">
-        Projects
+        {{ langService.t.projects }}
       </a>
 
       <a href="#contact" class="hover:text-cyan-400 transition">
-        Contact
+        {{ langService.t.contact }}
       </a>
 
     </div>
 
+    <div class="flex gap-3">
+
+  <!-- Bouton Français -->
+  <button
+    (click)="langService.changeLang('fr')"
+    class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-cyan-500 hover:text-black transition"
+  >
+    FR
+  </button>
+
+  <!-- Bouton Anglais -->
+  <button
+    (click)="langService.changeLang('en')"
+    class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-cyan-500 hover:text-black transition"
+  >
+    EN
+  </button>
+
+</div>
     
 
   </div>

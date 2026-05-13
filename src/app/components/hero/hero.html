@@ -6,7 +6,7 @@
       <div class="max-w-2xl">
 
         <p class="text-cyan-400 text-lg mb-2">
-          Hello 👋 I'm
+          {{ langService.t.hello }}
         </p>
 
         <h1 class="text-5xl md:text-7xl font-bold mb-6">
@@ -14,11 +14,11 @@
         </h1>
 
         <h2 class="text-2xl md:text-3xl text-slate-300 mb-6">
-          PHP/Symfony & Python/Django Developer
+          {{ langService.t.title }}
         </h2>
 
         <p class="text-slate-400 text-lg leading-relaxed mb-8">
-          Passionate backend developer focused on modern web applications, REST APIs, Docker and scalable architectures.
+          {{ langService.t.description }}
         </p>
 
         <!-- Boutons -->
@@ -36,7 +36,7 @@
             href="mailto:dpieton.dev@gmail.com"
             class="border border-cyan-500 hover:bg-cyan-500 hover:text-black px-6 py-3 rounded-xl font-semibold transition"
           >
-            Contact Me
+            {{ langService.t.contact }}
           </a>
 
         </div>
