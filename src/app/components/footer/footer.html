@@ -1,66 +1,26 @@
-<footer
-  id="contact"
-  class="border-t border-slate-800 mt-20"
->
-
+<footer id="contact" class="border-t border-slate-800 mt-20">
   <!-- Container -->
   <div class="container mx-auto px-6 py-10">
-
     <!-- Layout -->
     <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-
       <!-- Texte gauche -->
       <div>
-
-        <h3 class="text-2xl font-bold text-cyan-400 mb-2">
-          Dominique Pieton
-        </h3>
-
-        <p class="text-slate-400">
-          {{ langService.t.title }}
-        </p>
-
+        <h3 class="text-2xl font-bold text-cyan-400 mb-2">Dominique Pieton</h3>
+        <p class="text-slate-400">{{ langService.t.title }}</p>
       </div>
-
       <!-- Liens -->
       <div class="flex gap-6">
-
         <!-- GitHub -->
-        <a
-          href="https://github.com/dpieton-dev"
-          target="_blank"
-          class="text-slate-400 hover:text-cyan-400 transition"
-        >
-          GitHub
-        </a>
-
+        <a href="https://github.com/dpieton-dev" target="_blank" class="text-slate-400 hover:text-cyan-400 transition">GitHub</a>
         <!-- Email -->
-        <a
-          href="mailto:dpieton.dev@gmail.com"
-          class="text-slate-400 hover:text-cyan-400 transition"
-        >
-          {{ langService.t.email }}
-        </a>
-
+        <a href="mailto:dpieton.dev@gmail.com" class="text-slate-400 hover:text-cyan-400 transition">{{ langService.t.email }}</a>
         <!-- LinkedIn -->
-        <a
-          href="https://www.linkedin.com/in/dominique-pieton-b73883146/"
-          class="text-slate-400 hover:text-cyan-400 transition"
-        >
-          LinkedIn
-        </a>
-
+        <a href="https://www.linkedin.com/in/dominique-pieton-b73883146/" class="text-slate-400 hover:text-cyan-400 transition">LinkedIn</a>
       </div>
-
     </div>
-
     <!-- Ligne copyright -->
     <div class="mt-10 text-center text-slate-500 text-sm">
-
       © {{ currentYear }} Dominique Pieton — {{ langService.t.rights }}.
-
     </div>
-
   </div>
-
 </footer>

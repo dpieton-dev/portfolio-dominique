@@ -4,19 +4,15 @@ import { Injectable, signal } from '@angular/core';
   providedIn: 'root',
 })
 export class LanguageService {
-
   // Signal Angular contenant la langue active
   currentLang = signal<'en' | 'fr'>('en');
-
   // Toutes les traductions du site
   translations = {
-
     en: {
       hello: "Hello 👋 I'm",
       title: 'PHP/Symfony & Python/Django Developer',
       description:
         'Passionate backend developer focused on modern web applications, REST APIs, Docker and scalable architectures.',
-
       about: 'About Me',
       aboutText1 : "I'm a passionate web developer specialized in backend technologies such as PHP, Symfony, Python and Django.",
       aboutText2 : "I enjoy building modern web applications, REST APIs, scalable architectures and containerized environments using Docker.",
@@ -32,7 +28,6 @@ export class LanguageService {
       viewProject: 'View Project',
       email: 'Email',
       rights: 'All rights reserved',
-
       phpDesc: 'Backend development & APIs',
       symfonyDesc: 'Modern PHP framework',
       pythonDesc: 'Automation & backend',
@@ -48,7 +43,6 @@ export class LanguageService {
       title: 'Développeur PHP/Symfony & Python/Django',
       description:
         'Développeur backend passionné par les applications web modernes, les API REST, Docker et les architectures scalables.',
-
       about: 'À propos',
       aboutText1 : 'Je suis un développeur web passionné, spécialisé dans les technologies backend, telles que PHP, Symfony, Python et Django.',
       aboutText2 : "J'aime concevoir des applications web modernes, des API REST, des architectures évolutives et des environnements conteneurisés avec Docker.",
@@ -64,7 +58,6 @@ export class LanguageService {
       viewProject: 'Voir le projet',
       email: 'Email',
       rights: 'Tous droits réservés',
-      
       phpDesc: 'Développement backend & API',
       symfonyDesc: 'Framework PHP moderne',
       pythonDesc: 'Automatisation & backend',
@@ -75,12 +68,10 @@ export class LanguageService {
       postgresDesc: 'Base SQL avancée',
     },
   };
-
   // Retourne les traductions selon la langue active
   get t() {
     return this.translations[this.currentLang()];
   }
-
   // Change la langue active
   changeLang(lang: 'en' | 'fr') {
     this.currentLang.set(lang);

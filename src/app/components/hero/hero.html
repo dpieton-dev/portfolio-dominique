@@ -1,59 +1,20 @@
 <section class="container mx-auto px-6 pt-40 pb-20">
-
-    <div class="flex flex-col md:flex-row items-center justify-between gap-10">
-
-      <!-- Texte présentation -->
-      <div class="max-w-2xl">
-
-        <p class="text-cyan-400 text-lg mb-2">
-          {{ langService.t.hello }}
-        </p>
-
-        <h1 class="text-5xl md:text-7xl font-bold mb-6">
-          Dominique Pieton
-        </h1>
-
-        <h2 class="text-2xl md:text-3xl text-slate-300 mb-6">
-          {{ langService.t.title }}
-        </h2>
-
-        <p class="text-slate-400 text-lg leading-relaxed mb-8">
-          {{ langService.t.description }}
-        </p>
-
-        <!-- Boutons -->
-        <div class="flex flex-wrap gap-4">
-
-          <a
-            href="https://github.com/dpieton-dev"
-            target="_blank"
-            class="bg-cyan-500 hover:bg-cyan-400 text-black px-6 py-3 rounded-xl font-semibold transition"
-          >
-            GitHub
-          </a>
-
-          <a
-            href="mailto:dpieton.dev@gmail.com"
-            class="border border-cyan-500 hover:bg-cyan-500 hover:text-black px-6 py-3 rounded-xl font-semibold transition"
-          >
-            {{ langService.t.contact }}
-          </a>
-
-        </div>
-
+  <div class="flex flex-col md:flex-row items-center justify-between gap-10">
+    <!-- Texte présentation -->
+    <div class="max-w-2xl">
+      <p class="text-cyan-400 text-lg mb-2">{{ langService.t.hello }}</p>
+      <h1 class="text-5xl md:text-7xl font-bold mb-6">Dominique Pieton</h1>
+      <h2 class="text-2xl md:text-3xl text-slate-300 mb-6">{{ langService.t.title }}</h2>
+      <p class="text-slate-400 text-lg leading-relaxed mb-8">{{ langService.t.description }}</p>
+      <!-- Boutons -->
+      <div class="flex flex-wrap gap-4">
+        <a href="https://github.com/dpieton-dev" target="_blank" class="bg-cyan-500 hover:bg-cyan-400 text-black px-6 py-3 rounded-xl font-semibold transition">GitHub</a>
+        <a href="mailto:dpieton.dev@gmail.com" class="border border-cyan-500 hover:bg-cyan-500 hover:text-black px-6 py-3 rounded-xl font-semibold transition">{{ langService.t.contact }}</a>
       </div>
-
-      <!-- Photo profil -->
-      <div>
-
-        <img
-          src="/assets/profile.png"
-          alt="Dominique Pieton"
-          class="w-72 h-72 rounded-full object-cover border-4 border-cyan-500 shadow-2xl glow"
-        />
-
-      </div>
-
     </div>
-
-  </section>
+    <!-- Photo profil -->
+    <div>
+      <img src="/assets/profile.png" alt="Dominique Pieton" class="w-72 h-72 rounded-full object-cover border-4 border-cyan-500 shadow-2xl glow"/>
+    </div>
+  </div>
+</section>
