@@ -21,3 +21,51 @@ html {
     0 0 20px rgba(34, 211, 238, 0.3),
     0 0 40px rgba(34, 211, 238, 0.2);
 }
+
+/* Mode sombre */
+body.dark-theme {
+  background-color: #020617;
+  color: white;
+}
+
+/* Mode clair */
+body.light-theme {
+  background-color: #f8fafc;
+  color: #020617;
+}
+
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-theme {
+  background-color: #020617;
+  color: white;
+}
+
+body.light-theme {
+  background-color: #f8fafc;
+  color: #020617;
+}
+
+.theme-bg {
+  background-color: inherit;
+  color: inherit;
+}
+
+.theme-card {
+  background-color: #0f172a;
+}
+
+body.light-theme .theme-card {
+  background-color: #ffffff;
+  color: #020617;
+}
+
+.theme-muted {
+  color: #94a3b8;
+}
+
+body.light-theme .theme-muted {
+  color: #475569;
+}
